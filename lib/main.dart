@@ -1,9 +1,20 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:tracking/langs/locale_keys.g.dart';
 
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-void main() {
-  runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  runApp(EasyLocalization(
+    child: MyApp(),
+    path: 'translations',
+    saveLocale: true,
+    supportedLocales: [
+      Locale('vi', 'VN'),
+      Locale('en', 'US'),
+    ],
+    fallbackLocale: Locale('vi', 'VN'),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -11,7 +22,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: "Tracking",
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -24,7 +36,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      locale: context.locale,
+      supportedLocales: context.supportedLocales,
+      localizationsDelegates: context.localizationDelegates,
+      home: MyHomePage(title: "Home a"),
     );
   }
 }
@@ -96,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              LocaleKeys.Home.tr(),
             ),
             Text(
               '$_counter',
