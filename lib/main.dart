@@ -1,13 +1,18 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:tracking/langs/locale_keys.g.dart';
+import 'package:tracking/pages/login/login_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  // init firebase
+  await Firebase.initializeApp();
+
   runApp(EasyLocalization(
     child: MyApp(),
-    path: 'translations',
+    path: 'assets/translations',
     saveLocale: true,
     supportedLocales: [
       Locale('vi', 'VN'),
@@ -39,7 +44,8 @@ class MyApp extends StatelessWidget {
       locale: context.locale,
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,
-      home: MyHomePage(title: "Home a"),
+      home: LoginPage(),
+      // MyHomePage(title: "Home a"),
     );
   }
 }
