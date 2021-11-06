@@ -1,4 +1,11 @@
 {
     "Home": "Home hinh",
-    "LoginGoogle": "Login with Google"   
+    "LoginGoogle": "Login with Google",
+    "HomePageHeader": "Home Page Header",
+    "ListHeader":"List",
+    "InfoHeader": "Info",
+    "NormalState": "No Help",
+    "NeedHelpState": "Help me !!!",
+    "CallContentNeedHelpState": "Please help me!",
+    "CallContentNormalState": "Contact me!"
 }

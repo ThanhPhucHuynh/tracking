@@ -1,4 +1,11 @@
 {
     "Home": "Trang chủ",
-    "LoginGoogle": "Đăng nhập với Google"
+    "LoginGoogle": "Đăng nhập với Google",
+    "HomePageHeader": "HomePageHeader trang chu ne",
+    "ListHeader":"Danh sách",
+    "InfoHeader": "Thông tin",
+    "NormalState": "Khỏe re",
+    "NeedHelpState": "Cuu dới!!!",
+    "CallContentNeedHelpState": "Xin hãy giúp tôi!",
+    "CallContentNormalState": "Gọi cho tôi!"
 }
